@@ -4,7 +4,7 @@ import router from './routes/routes'
 import Vuex from 'vuex'
 import store from './store'
 Vue.use(Vuex)
-
+// eslint-disable-next-line
 new Vue({
   el: '#app',
   router,

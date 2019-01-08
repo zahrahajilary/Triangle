@@ -5,7 +5,7 @@ import * as actions from './actions'
 Vue.use(Vuex)
 
 const state = {
-   result: ''
+  result: ''
 }
 
 export default new Vuex.Store({

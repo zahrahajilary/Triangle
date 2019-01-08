@@ -1,40 +1,37 @@
 <template>
   <div>
-    <triangle-form :active="activeC"></triangle-form>
-   
+    <triangle-form :active="activeC" />
   </div>
 </template>
 <script>
-import RangeNumber from "./RangeNumber";
-import FormHelper from "./FormHelper";
-
-import TriangleForm from "./TriangleForm";
+import TriangleForm from './TriangleForm'
 export default {
   methods: {
-      activeC(a, b) {
+    activeC (a, b) {
       if (
-        a == "" ||
-        a == null ||
+        a === '' ||
+        a === null ||
         a === 0 ||
-        (b == "" || b == null || b === 0)
+        (b === '' || b === null || b === 0)
       ) {
-        return true;
+        return true
       } else {
-        this.$nextTick(()=>{
+        this.$nextTick(() => {
           this.$root.$emit('calculatingRange')
         })
-        return false;
+        return false
       }
-    },
+    }
   },
-  mounted() {
+  mounted () {
   },
   components: {
     TriangleForm
   }
-};
-</script> 
+}
+</script>
 <style lang="scss">
+// eslint-disable-next-line
 $white: rgba(255, 255, 255, 1);
 $darkGray: rgba(0, 0, 0, 0.75);
 $transOrange: rgba(245, 132, 20, 0.75);

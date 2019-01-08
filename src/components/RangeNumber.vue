@@ -5,29 +5,27 @@
 </template>
 <script>
 export default {
-  props: ["fL", "sL"],
-  data() {
+  props: ['fL', 'sL'],
+  data () {
     return {
       minCLine: 0,
       maxCLine: 0
-    };
-  },
-  methods: {
-    rangeNumber() {
-      this.minCLine = Number(this.fL) - Number(this.sL);
-      this.minCLine = Math.abs(this.minCLine)
-      this.maxCLine = Number(this.fL) + Number(this.sL);
-      this.$nextTick(()=>{
-        this.$root.$emit('checkingInput',[this.minCLine,this.maxCLine])
-    
-      })
-      
     }
   },
-  mounted() {
-    this.$root.$on("calculatingRange", () => {
-      this.rangeNumber();
-    });
+  methods: {
+    rangeNumber () {
+      this.minCLine = Number(this.fL) - Number(this.sL)
+      this.minCLine = Math.abs(this.minCLine)
+      this.maxCLine = Number(this.fL) + Number(this.sL)
+      this.$nextTick(() => {
+        this.$root.$emit('checkingInput', [this.minCLine, this.maxCLine])
+      })
+    }
+  },
+  mounted () {
+    this.$root.$on('calculatingRange', () => {
+      this.rangeNumber()
+    })
   }
-};
+}
 </script>
