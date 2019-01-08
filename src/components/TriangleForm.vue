@@ -23,16 +23,18 @@
           </div>
         </div>
       </div>
+      <div slot="form-control">
+          <range-number :fL="aLine" :sL="bLine"/>
+          <detect-type
+            :aLine="aLine"
+            :bLine="bLine"
+            :cLine="cLine"
+            :activeBtn="activeClickButton"
+            :checking="checkTypeTriangle"
+            :result="type"
+          />
+      </div>
     </form-helper>
-    <range-number :fL="aLine" :sL="bLine"/>
-    <detect-type
-      :aLine="aLine"
-      :bLine="bLine"
-      :cLine="cLine"
-      :activeBtn="activeClickButton"
-      :checking="checkTypeTriangle"
-      :result="type"
-    />
   </div>
 </template>
 <script>

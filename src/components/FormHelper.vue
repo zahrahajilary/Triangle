@@ -4,9 +4,10 @@
             <slot name="form-header"></slot>
         </div>
         <div id="form-body">
-            <slot>
-                <slot name="form-body"></slot>
-            </slot>
+            <slot name="form-body"></slot>
+        </div>
+        <div id="form-control">
+            <slot name="form-control"></slot>
         </div>
     </div>
 </template>
