@@ -15,7 +15,7 @@
             type="number"
             placeholder="insert third line"
             v-model="cLine"
-            v-on:input="check"
+            v-on:input="validation"
             :disabled="active(aLine,bLine)"
           >
           <div v-if="error">
@@ -85,13 +85,14 @@ export default {
         return this.type
       }
     },
-    check () {
+    validation () {
       this.$nextTick(() => {
         this.$root.$on('checkingInput', data => {
           if (data[0] <= this.cLine && this.cLine <= data[1]) {
             this.error = false
           } else {
             this.error = true
+            this.$store.dispatch('getResult', '')
           }
         })
       })

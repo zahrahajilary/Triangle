@@ -1,19 +1,20 @@
 <template>
   <div>
-    <triangle-form :active="activeC" />
+    <triangle-form :active="activeLineC" />
   </div>
 </template>
 <script>
 import TriangleForm from './TriangleForm'
 export default {
   methods: {
-    activeC (a, b) {
+    activeLineC (a, b) {
       if (
         a === '' ||
         a === null ||
         a === 0 ||
         (b === '' || b === null || b === 0)
       ) {
+        this.$store.dispatch('getResult', '')
         return true
       } else {
         this.$nextTick(() => {
